@@ -24,7 +24,7 @@ AHK class providing support to access SQLite databases.
 
 ### Basic usage
 
-- Create a new instance of the class SQLiteDB calling `MyDB := New SQLiteDB`
+- Create a new instance of the class SQLiteDB calling `MyDB := New sqllitedb()`
 - Open your database calling `MyDB.OpenDB(MyDatabaseFilePath)`. If the file doesn't exist, a new database will be created unless you specify "False" as the third parameter.
 - MyDB object provides four methods to pass SQL statements to the database:
   - `MyDB.Exec(SQL)`

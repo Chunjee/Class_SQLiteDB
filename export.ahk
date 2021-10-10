@@ -1,7 +1,7 @@
 class sqllitedb {
 	; PRIVATE Properties and Methods
 	static Version := ""
-	static _SQLiteDLL := A_ScriptDir . "\SQLite3.dll"
+	static _SQLiteDLL := A_ScriptDir . "\sqlite3.dll"
 	static _RefCount := 0
 	static _MinVersion := "3.6"
 	; ======================
