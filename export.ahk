@@ -781,10 +781,6 @@ class sqllitedb {
 			this.ErrorMsg := "Invalid database handle!"
 			return false
 		}
-		if !RegExMatch(SQL, "i)^\s*(SELECT|PRAGMA)\s") {
-			this.ErrorMsg := A_ThisFunc . " requires a query statement!"
-			return false
-		}
 		Names := ""
 		Err := 0, RC := 0, GetRows := 0
 		I := 0, Rows := Cols := 0
@@ -876,10 +872,6 @@ class sqllitedb {
 			this.ErrorMsg := "Invalid database handle!"
 			return false
 		}
-		if !RegExMatch(SQL, "i)^\s*(INSERT|UPDATE|REPLACE)\s") {
-			this.ErrorMsg := A_ThisFunc . " requires an INSERT/UPDATE/REPLACE statement!"
-			return false
-		}
 		Stmt := 0
 		this._StrToUTF8(SQL, UTF8)
 		RC := DllCall("SQlite3.dll\sqlite3_prepare_v2", "Ptr", this._Handle, "Ptr", &UTF8, "Int", -1
@@ -917,10 +909,6 @@ class sqllitedb {
 		HasRows := false
 		if !(this._Handle) {
 			this.ErrorMsg := "Invalid dadabase handle!"
-			return false
-		}
-		if !RegExMatch(SQL, "i)^\s*(SELECT|PRAGMA)\s|") {
-			this.ErrorMsg := A_ThisFunc . " requires a query statement!"
 			return false
 		}
 		Query := 0
@@ -1146,10 +1134,6 @@ class sqllitedb {
 		this.ErrorCode := 0
 		if !(this._Handle) {
 			this.ErrorMsg := "Invalid database handle!"
-			return false
-		}
-		if !RegExMatch(SQL, "i)^\s*(INSERT|UPDATE|REPLACE)\s") {
-			this.ErrorMsg := A_ThisFunc . " requires an INSERT/UPDATE/REPLACE statement!"
 			return false
 		}
 		Query := 0
